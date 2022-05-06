@@ -1,0 +1,29 @@
+<div class="header text-center row" routerLink="">
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/SpaceX-Logo.svg/2000px-SpaceX-Logo.svg.png" alt="No img">
+    </div>
+  
+    <div class="container">
+        <div class="row">
+            <div class="col text-center left-bor">
+                <h2 *ngIf="detailedLaunch">{{ detailedLaunch.mission_name }}</h2>
+            </div>
+            <div class="col text-center mission-status-inline right-bor">
+                <h2 id="mission-status">Status:
+                <span [ngStyle]="{'color': checkSuccess() === 'Successful' ? '#64d164' : '#db4e4e'}">{{ checkSuccess() }}</span>
+                </h2>
+            </div>
+        </div>
+
+        <div class="row video-details ft-text">
+            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 text-center details">
+                <h1 class="rocket-name" *ngIf="detailedLaunch.rocket">{{ detailedLaunch.rocket.rocket_name }}</h1>
+                <h5 id="dark">{{ detailedLaunch.launch_site?.site_name_long }}</h5>
+                <p class="inner-details">
+                {{ detailedLaunch.details }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+  </div>

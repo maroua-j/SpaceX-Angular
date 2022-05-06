@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="right-div">
+      <h2 class="default">Launch History:</h2>
+      <div class="launch-scroller">
+        <ul>
+          <li *ngFor="let launch of launches" id="launchlist">
+            <div class="row" id="flightrow">
+              <div class="col-3">
+                <a routerLink="/launch/{{launch.flight_number}}">Flight #: {{ launch.flight_number }}</a>
+              </div>
+              <div class="col-6" id="missionNames">
+                <a routerLink="/launch/{{launch.flight_number}}">
+                    {{ launch.mission_name }}
+                </a>
+              </div>
+              <div class="col-3">
+                <a routerLink="/launch/{{launch.flight_number}}" id="dates">
+                  {{ launch.launch_date_utc | date: 'dd LLL y H\'h\'mm' }}
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <h2 class="default">Upcoming Launches:</h2>
+      <div class="upcoming-launch-scroller">
+        <ul>
+          <li *ngFor="let launch of upcomingLaunches">
+              <div class="row" id="flightrow">
+                  <div class="col-3">
+                    <a routerLink="/upcomingLaunch/{{launch.flight_number}}">Flight #: {{ launch.flight_number }}</a>
+                  </div>
+                  <div class="col-6" id="missionNames">
+                    <a routerLink="/upcomingLaunch/{{launch.flight_number}}">
+                        {{ launch.mission_name }}
+                    </a>
+                  </div>
+                  <div class="col-3">
+                    <a routerLink="/upcomingLaunch/{{launch.flight_number}}" id="dates">
+                      {{ launch.launch_date_utc | date: 'dd LLL y H\'h\'mm' }}
+                    </a>
+                  </div>
+                </div>
+              </li>
+        </ul>
+      </div>
+      <div class="spacex-img">
+        <a href="http://www.spacex.com/" id="spacex-link">
+          <img src="http://res.cloudinary.com/dacxbqrp3/image/upload/v1531417702/SpaceX-Logo.svg_xpoxfj.png" alt="No img" id="logo">
+        </a>
+      </div>
+  </div>
