@@ -1,52 +1,71 @@
-<div class="container-fluid">
-    <div class="right-div">
-      <h2 class="default">Launch History:</h2>
-      <div class="launch-scroller">
-        <ul>
-          <li *ngFor="let launch of launches" id="launchlist">
-            <div class="row" id="flightrow">
-              <div class="col-3">
-                <a routerLink="/launch/{{launch.flight_number}}">Flight #: {{ launch.flight_number }}</a>
-              </div>
-              <div class="col-6" id="missionNames">
-                <a routerLink="/launch/{{launch.flight_number}}">
-                    {{ launch.mission_name }}
-                </a>
-              </div>
-              <div class="col-3">
-                <a routerLink="/launch/{{launch.flight_number}}" id="dates">
-                  {{ launch.launch_date_utc | date: 'dd LLL y H\'h\'mm' }}
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <h2 class="default">Upcoming Launches:</h2>
-      <div class="upcoming-launch-scroller">
-        <ul>
-          <li *ngFor="let launch of upcomingLaunches">
-              <div class="row" id="flightrow">
-                  <div class="col-3">
-                    <a routerLink="/upcomingLaunch/{{launch.flight_number}}">Flight #: {{ launch.flight_number }}</a>
-                  </div>
-                  <div class="col-6" id="missionNames">
-                    <a routerLink="/upcomingLaunch/{{launch.flight_number}}">
-                        {{ launch.mission_name }}
-                    </a>
-                  </div>
-                  <div class="col-3">
-                    <a routerLink="/upcomingLaunch/{{launch.flight_number}}" id="dates">
-                      {{ launch.launch_date_utc | date: 'dd LLL y H\'h\'mm' }}
-                    </a>
-                  </div>
-                </div>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container px-4 px-lg-5"><a class="navbar-brand" href="#!">Start Bootstrap</a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#!">All Products</a></li>
+                      <li>
+                          <hr class="dropdown-divider">
+                      </li>
+                      <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                      <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                  </ul>
               </li>
-        </ul>
-      </div>
-      <div class="spacex-img">
-        <a href="http://www.spacex.com/" id="spacex-link">
-          <img src="http://res.cloudinary.com/dacxbqrp3/image/upload/v1531417702/SpaceX-Logo.svg_xpoxfj.png" alt="No img" id="logo">
-        </a>
+          </ul>
+          <form class="d-flex"><button class="btn btn-outline-dark" type="submit"><i class="bi-cart-fill me-1"></i>Cart<span class="badge bg-dark text-white ms-1 rounded-pill">0</span></button></form>
       </div>
   </div>
+</nav>
+
+<!-- Header-->
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+          <h1 class="display-4 fw-bolder">Launch History</h1>
+          <p class="lead fw-normal text-white-50 mb-0">List of the past && upcoming launches</p>
+      </div>
+  </div>
+</header>
+
+<!-- Section-->
+<section class="py-5">
+  <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5" *ngFor="let launch of launches" id="launchlist">
+              <div class="card h-100" id="flightrow">
+                  <!-- Product image-->
+                  <img class="card-img-top" [src]="launch.links.mission_patch_small" alt="...">
+                  <!-- Product details-->
+                  <div class="card-body p-4">
+                      <div class="text-center">
+                          <!-- Launch number and name-->
+                          Flight #: {{ launch.flight_number }}
+                          <h5 class="fw-bolder">{{ launch.mission_name }}</h5>
+                          <!-- Launch utc date-->
+                          {{ launch.launch_date_utc | date: 'dd LLL y H\'h\'mm' }}
+                      </div>
+                  </div>
+                  <!-- Launch details-->
+                  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" routerLink="/launch/{{launch.flight_number}}">View details</a></div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+  <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p>
+  </div>
+</footer>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script><!-- Core theme JS-->
+<script src="js/scripts.js"></script>
