@@ -1,0 +1,24 @@
+<!-- Header-->
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Capsule History</h1>
+            <p class="lead fw-normal text-white-50 mb-0">List of the past && upcoming capsules</p>
+        </div>
+    </div>
+  </header>
+
+
+<table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let capsule of capsules">
+            <app-capsulecard [capsule]="capsule"></app-capsulecard>
+        </tbody>
+</table>

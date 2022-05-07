@@ -1,5 +1,7 @@
+import { CapsuleService } from './../../../services/capsule.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Capsule } from 'src/app/components/capsules/model/Capsule';
 import { SpacexService } from 'src/app/services/spacex.service';
 
 @Component({
@@ -9,15 +11,16 @@ import { SpacexService } from 'src/app/services/spacex.service';
 })
 export class DetailComponent implements OnInit {
   detailedLaunch: any;
+  capsules: Capsule[];
 
-  constructor(private route: ActivatedRoute, private launchService: SpacexService) { }
+  constructor(private route: ActivatedRoute, private launchService: SpacexService, private capsuleService: CapsuleService) { }
 
   ngOnInit() {
     let snapshot = this.route.snapshot;
     this.launchService.getLaunchByNum(snapshot.params.num).toPromise().then(launch => {
       this.detailedLaunch=launch;
     });
-    
+    this.capsuleService.getCapsuleByMission('CRS-1').subscribe(capsules => this.capsules = capsules);
   }
 
   checkSuccess() {

@@ -1,5 +1,7 @@
+import { HomeComponent } from './components/common/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CapsuleComponent } from './components/capsules/capsule/capsule.component';
 import { DetailComponent } from './components/launches/detail/detail.component';
 
 import { LaunchComponent } from './components/launches/launch.component';
@@ -8,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: LaunchComponent
+    component: HomeComponent
   },
 
   {
@@ -20,7 +22,14 @@ const routes: Routes = [
   //   path: 'capsule',
   //   component: CapsuleComponent
   // },
-
+  { 
+    path: 'capsule/:serial', 
+    component: CapsuleComponent
+  },
+  { 
+  path: 'home', 
+  component: HomeComponent
+  },
   {
     path: '**',
     redirectTo: ''
@@ -28,7 +37,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
