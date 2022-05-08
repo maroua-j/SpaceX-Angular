@@ -1,0 +1,18 @@
+<div class="card h-100" id="flightrow">
+    <!-- Product image-->
+    <img class="card-img-top" [src]="launch.links.mission_patch_small" alt="...">
+    <!-- Product details-->
+    <div class="card-body p-4">
+        <div class="text-center">
+            <!-- Launch number and name-->
+            Flight #: {{ launch.flight_number }}
+            <h5 class="fw-bolder">{{ launch.mission_name }}</h5>
+            <!-- Launch utc date-->
+            {{ launch.launch_date_utc | date: 'dd LLL y H\'h\'mm'}}
+        </div>
+    </div>
+    <!-- Launch details-->
+    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+        <div class="text-center"><a class="btn btn-outline-dark mt-auto" routerLink="/launch/{{launch.flight_number}}">View details</a></div>
+    </div>
+</div>

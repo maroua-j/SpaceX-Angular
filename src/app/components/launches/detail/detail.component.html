@@ -1,0 +1,107 @@
+<!-- Header - set the background image for the header in the line below-->
+<header class="py-1 bg-image-full" style="background-image: url('https://cdn.wallpapersafari.com/36/5/6gd0lW.jpg');">
+    <div class="text-center my-3">
+        <img class="img-fluid rounded-circle mb-3" [src]="detailedLaunch.links?.mission_patch_small" alt="...">
+        <h1 class="text-white fs-1 fw-bolder">{{ detailedLaunch.mission_name }}</h1>
+        <p class="text-white-50 mb-0"> Launched in {{ detailedLaunch.launch_year }}</p>
+        <h5 class="text-white">Status :
+            <span [ngStyle]="{'color': checkSuccess() === 'Successful' ? '#64d164' : '#db4e4e'}">{{ checkSuccess() }}</span>
+        </h5>
+    </div>
+</header>
+
+<!-- Details section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2>Launch details</h2>
+                <p class="lead">{{ detailedLaunch.details }}</p>
+                <p class="mb-0"><b>Launch site :</b> {{ detailedLaunch.launch_site.site_name_long }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Rocket && News article section -->
+<section class="py-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 d-flex justify-content-between">
+                <div class="col-lg-4 col-sm">
+                    <h2>Rocket</h2>
+                    <div class="text-center" *ngIf=(detailedLaunch.rocket)>
+                        <img class="img-fluid" src="assets/rocket.png" alt="..." />
+                        <p class="lead">{{ detailedLaunch.rocket.rocket_name }}</p>
+                        <p><b>Type :</b> {{ detailedLaunch.rocket.rocket_type }}</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-sm">
+                    <h2>Links</h2>
+                    <div class="text-center" *ngIf=(detailedLaunch.links.article_link)>
+                        <a href="{{ detailedLaunch.links?.article_link }}">
+                            <img class="img-fluid" src="assets/news.png" alt="..." id="news-article"/>
+                        </a>
+                        <p class="lead">News article</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Flickr images -->
+<section class="py-5">
+    <div class="container">
+        <!--TODO : col-lg-8 ??-->
+        <h2>Flickr images</h2>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="https://farm9.staticflickr.com/8747/16581738577_83e0690136_o.png" class="d-block w-100" alt="..."/>
+                </div>
+                <div class="carousel-item">
+                <img src="https://farm8.staticflickr.com/7585/16602893909_1181317089_o.jpg" class="d-block w-100" alt="..."/>
+                </div>
+                <div class="carousel-item">
+                <img src="https://farm9.staticflickr.com/8747/16581738577_83e0690136_o.png" class="d-block w-100" alt="..."/>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Image element - set the background image for the header in the line below-->
+<div class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/4ulffa6qoKA/1200x800');">
+    <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
+    <div style="height: 20rem;"></div>
+</div><!-- Content section-->
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Engaging Background Images</h2>
+                <p class="lead">The background images used in this template are sourced from Unsplash and are open source and free to use.</p>
+                <p class="mb-0">I can't tell you how many people say they were turned off from science because of a science teacher that completely sucked out all the inspiration and enthusiasm they had for the course.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script><!-- Core theme JS-->
+<script src="js/scripts.js"></script>

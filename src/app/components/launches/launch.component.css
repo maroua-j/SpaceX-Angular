@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Coda+Caption:800%22");
+/*
+VALUES:
+BLUE: #005384
+GRAY: #A7A9AC
+*/
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: scroll;
+  display:flex;
+}
+
+.titre {
+  font-size: 3rem;
+  color: #AA9183;
+  text-align: center;
+  padding-top:1.5%;
+  font-family: "Coda Caption", sans-serif;
+}
+
+.right-div {
+  padding-top:5px;
+  height: 98vh;
+}
+
+.launch-scroller {
+  overflow: scroll;
+  overflow-x:hidden;
+  height: 50%;
+}
+.upcoming-launch-scroller {
+  overflow: scroll;
+  overflow-x:hidden;
+  height: 14%;
+}
+
+#logo {
+  width:50%;
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(34, 34, 34, 0.534));
+  filter: drop-shadow(5px 5px 5px rgba(34, 34, 34, 0.534));
+}
+
+.spacex-img {
+  height:10%;
+}
+
+.spacex-img img {
+  cursor:pointer;
+}
+
+a {
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  color: #AA9183;
+  font-size: 24px;
+  text-align: center;
+  margin: 20px;
+}
+
+.future-text {
+  position: relative;
+  bottom:10%;
+  font-family: "Coda Caption", sans-serif;
+}
+
+#blue {
+  color: rgb(0, 97, 153);
+}
+
+h2 {
+  color: #AA9183;
+  padding-left: 10px;
+  font-family: "Coda Caption", sans-serif;
+}
+
+#spacex-link {
+  display:block;
+  width:100%;
+  height:100%;
+}
+
+#dates {
+  float:right;
+}
+
+#launchlist {
+  display:inline;
+}
+
+#flightrow {
+  border-bottom:1px solid black;
+  cursor:pointer;
+}
+
+.default {
+  cursor:default;
+}
