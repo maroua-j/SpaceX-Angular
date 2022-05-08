@@ -1,0 +1,17 @@
+<div class="card h-100" id="flightrow">
+  <!-- Product image-->
+  <img class="img-fluid" src="../../../../assets/CrewDragon.jpg" alt="..." />
+  <!-- Product details-->
+  <div class="card-body p-4">
+      <div class="text-center">
+          <!-- Capsule id-->
+          <h5 class="fw-bolder">{{capsule.capsule_id}}</h5>
+          <!-- Launch utc date-->
+          {{capsule.details}}
+      </div>
+  </div>
+  <!-- Launch details-->
+  <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+      <div class="text-center"><a class="btn btn-outline-dark mt-auto" routerLink="/capsule/{{capsule?.capsule_serial}}">View details</a></div>
+  </div>
+</div>
