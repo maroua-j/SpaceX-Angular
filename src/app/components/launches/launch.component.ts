@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Launch } from './class/Launch';
 import { SpacexService } from 'src/app/services/spacex.service';
 
 @Component({
@@ -28,7 +27,7 @@ export class LaunchComponent implements OnInit {
     });
   }
 
-  navigate(launch: Launch) {
+  navigate(launch: any) {
     this.router.navigateByUrl('/launch/{{launch.flight_number}}');
   }
 

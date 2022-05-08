@@ -1,6 +1,5 @@
 import { Capsule } from '../../capsules/model/Capsule';
 import { Component, Input, OnInit } from '@angular/core';
-import { Launch } from '../class/Launch';
 
 @Component({
   selector: 'app-launchcard',

@@ -55,33 +55,27 @@
 <!-- Flickr images -->
 <section class="py-5">
     <div class="container">
-        <!--TODO : col-lg-8 ??-->
-        <h2>Flickr images</h2>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="row justify-content-center text-center">
+            <h2>Flickr images</h2>
+            <div id="carouselIndicators" class="carousel slide my-3" data-bs-ride="carousel" *ngIf="detailedLaunch.links.flickr_images?.length">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselIndicators" *ngFor="let image of detailedLaunch.links.flickr_images; let i = index" [attr.data-bs-slide-to]="i" [ngClass]="{'active' : i == 0}" aria-current="true" [attr.aria-label]="'Slide-' + i + 1"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item" *ngFor="let image of detailedLaunch.links.flickr_images, let index = index" [ngClass]="{'active': index == 0 }">
+                        <img [src]="image" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <img src="https://farm9.staticflickr.com/8747/16581738577_83e0690136_o.png" class="d-block w-100" alt="..."/>
-                </div>
-                <div class="carousel-item">
-                <img src="https://farm8.staticflickr.com/7585/16602893909_1181317089_o.jpg" class="d-block w-100" alt="..."/>
-                </div>
-                <div class="carousel-item">
-                <img src="https://farm9.staticflickr.com/8747/16581738577_83e0690136_o.png" class="d-block w-100" alt="..."/>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </div>
 </section>
@@ -91,17 +85,7 @@
     <!-- Put anything you want here! The spacer below with inline CSS is just for demo purposes!-->
     <div style="height: 20rem;"></div>
 </div><!-- Content section-->
-<section class="py-5">
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <h2>Engaging Background Images</h2>
-                <p class="lead">The background images used in this template are sourced from Unsplash and are open source and free to use.</p>
-                <p class="mb-0">I can't tell you how many people say they were turned off from science because of a science teacher that completely sucked out all the inspiration and enthusiasm they had for the course.</p>
-            </div>
-        </div>
-    </div>
-</section>
+
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script><!-- Core theme JS-->
 <script src="js/scripts.js"></script>
