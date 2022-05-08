@@ -1,0 +1,40 @@
+<!-- Page Content -->
+
+<header class="py-1 bg-image-full" style="background-image: url('https://cdn.wallpapersafari.com/36/5/6gd0lW.jpg');">
+  <div class="text-center my-3">
+      <img class="rounded-circle img" src="../../../../assets/CrewDragon.jpg" alt="...">
+      <h1 class="text-white fs-1 fw-bolder titlecap">{{capsule?.capsule_id}}</h1>
+      <p class="text-white-50 mb-0"> Launched in {{capsule?.original_launch}}</p>
+  </div>
+</header>
+
+
+<!-- Launch Description -->
+<section class="py-4">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8">
+              <h2>Launch Description</h2>
+              <p class="lead">{{capsule?.details}}</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- Capsule Detail -->
+<section class="py-3">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8">
+              <h2>Details</h2>
+              <ul class="lead">
+                <li>ID : {{capsule?.capsule_id}}</li>
+                <li>Type : {{capsule?.type}}</li>
+                <li>Original launch : {{capsule?.original_launch}}</li>
+                <li>Original launch unix : {{capsule?.original_launch_unix}}</li>
+                <li>Landings count :  {{capsule?.landings}}</li>
+            </ul>
+          </div>
+      </div>
+  </div>
+</section>
